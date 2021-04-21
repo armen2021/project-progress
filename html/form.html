@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/form-style.css">
+</head>
+<body>
+
+    <div class="container">
+      
+        <h1>Booking Form</h1>
+          
+        
+        <div class="row">  
+          
+          <div>
+                       
+            <label>Name</label>
+            <input class="in" type="text" name="firstname" placeholder="First">
+           
+            <label for="email">Email</label>
+            <input class="in" type="email" id="email" name="email">
+           
+            <label for="DD">Departure Date</label>
+            <input class="in" type="date" id="DD" name="Departure Date" >
+           
+            <label for="RD">Return Date</label>
+            <input class="in" type="date" id="RD" name="Return Date">
+           
+            <label  for="number">Number of guests/passangers</label>
+            <select class="in" id="number">
+              <option>*Please Select*</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+
+          </div>
+          
+          <div style="margin-left: 50px;margin-top: 20px;"> 
+            
+            <label for="lastname"></label>   
+            <input class="in" type="text" id="lastname" name="lastname" placeholder="Last">
+            
+            <label for="tel">Phone</label>
+            <input class="in" type="tel" id="tel" name="tel" placeholder="### ### ####">
+            
+            <label for="DT">Departure Time</label>
+            <input class="in" type="time" id="DT" name="Departure Time">
+            
+            <label for="RT">Return Time</label>
+            <input class="in" type="time" id="RT" name="Return Time">
+            
+        
+
+            <label for="expyear">Type of room/ticket</label>
+            <div class="row" style="margin: 5px;">
+            <div>                
+                <input type="radio" name="radio"> Economy <br>
+                <input type="radio" name="radio">Business <br>
+            </div>
+            <div>          
+                <input type="radio" name="radio">Premium <br>
+                <input type="radio" name="radio">Deluxe <br>
+            </div>
+        </div>      
+    </div>
+       
+        <button class="book">BOOK</button>
+         
+    </div>
+
+</body>
+
+
+
+</html>
