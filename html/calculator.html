@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.myBtn{
+  height: 50px;
+  width: 70px;
+  margin: 5px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 2px solid slategrey;
+}
+
+.myBtnPr{
+  height: 50px;
+  width: 70px;
+  margin: 5px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 2px solid slategrey;
+  background-color: wheat;
+  box-shadow: inset 50px red;
+}
+
+.myBtnEq{
+  height: 50px;
+  width: 70px;
+  margin: 5px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.myText{
+ display: block;
+ margin: 15px auto;
+ height: 50px;
+ width: 300px;
+ border-radius: 5px;
+ border: 2px solid black;
+ background-color: white;
+ font-size: 17px;
+ color: black;
+ text-align: right;
+}
+.box{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+}
+#box {
+ width: 350px;
+ padding: 8px 8px 20px 8px;
+ margin: 20px auto;
+ background-color: slategrey;
+ border-radius: 5px;
+ border: 2px solid black;
+}
+</style>
+
+
+<div class="box" id="box">
+  <form name="myCalc">
+
+    <input class="myText" type="text" id="text" name="text" readonly>
+    
+    <br>
+
+    <input class="myBtnPr" type="button" value="%" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnPr" type="button" value="n!" onclick="myCalc.text.value = factor(myCalc.text.value)"> 
+    <input class="myBtn" type="button" value="C" onclick="myCalc.text.value = ''"> 
+    <input class="myBtn" type="button" value="Del" onclick="myCalc.text.value = myCalc.text.value.substring(0, myCalc.text.value.length-1)">
+    
+    <br>
+    
+    <input class="myBtnPr" type="button" value="1/x" onclick="myCalc.text.value = 1/(myCalc.text.value)"> 
+    <input class="myBtnPr" type="button" value="x^2" onclick="myCalc.text.value = (myCalc.text.value)*(myCalc.text.value)"> 
+    <input class="myBtnPr" type="button" value="√x" onclick="myCalc.text.value = Math.sqrt(myCalc.text.value)"> 
+    <input class="myBtnPr" type="button" value="/" onclick="myCalc.text.value += this.value">
+    
+    <br>
+    
+    <input class="myBtn" type="button" value="7" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="8" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="9" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnPr" type="button" value="*" onclick="myCalc.text.value += this.value"> 
+    
+    <br>
+    
+    <input class="myBtn" type="button" value="4" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="5" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="6" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnPr" type="button" value="-" onclick="myCalc.text.value += this.value">
+    
+    <br>
+    
+    <input class="myBtn" type="button" value="1" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="2" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtn" type="button" value="3" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnPr" type="button" value="+" onclick="myCalc.text.value += this.value">
+    
+    <br>
+    
+    <input class="myBtnPr" type="button" value="-/+" onclick="myCalc.text.value = -myCalc.text.value"> 
+    <input class="myBtn" type="button" value="0" onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnPr" type="button" value="." onclick="myCalc.text.value += this.value"> 
+    <input class="myBtnEq" type="button" value="=" onclick="myCalc.text.value = result(myCalc.text.value)">
+  
+  </form>
+</div>
+
+<script>
+
+function result(x){
+  if(x.includes('%')){ 
+    a=percentage(x);
+  } else 
+  a = eval(x);
+  return a;
+}
+
+
+function percentage(x){
+for (i = 0; i <= x.length; i++ ){
+  if (x[i] == "%"){
+    a = (x.substring(0,i)/100)*x.substring(i+1,x.length);
+  }
+}
+return a;
+}
+
+function factor (x){
+  var a=1;
+  for (i = 1; i <= x; i++ ){
+    a = a * i;
+  }
+  return a; 
+}
+
+// function onePlus(x){
+//  s = ["/","*","-","+"]; 
+//  a = x.length;
+//  {for (i = 0; i <= s.length-1; i++ )
+//   if(x == s[i]){
+//     return x; 
+//   } else
+//     return x += x;
+// }
+// }
+
+</script>
+
+</html>
+ 
